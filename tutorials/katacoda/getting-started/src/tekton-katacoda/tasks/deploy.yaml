@@ -23,7 +23,7 @@ spec:
       image: lachlanevenson/k8s-kubectl
       args:
       - expose
-      - deploy
+      - pod
       - myapp
       - --port=80
       - --target-port=8080

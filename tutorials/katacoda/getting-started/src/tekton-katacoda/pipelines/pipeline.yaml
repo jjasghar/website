@@ -17,3 +17,5 @@ spec:
     - name: deploy-app
       taskRef:
         name: deploy-app
+      runAfter:
+        - build-test-app

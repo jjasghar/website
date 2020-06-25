@@ -12,11 +12,10 @@ kind: Task
 metadata:
   name: YOUR-TASK-NAME
 spec:
-  inputs:
-    resources:
+  resources:
+    inputs:
       # The input resource(s) of the task, such as a GitHub repository
-  outputs:
-    resources:
+    outputs:
       # The output resource(s) of the task, such as an image built from the source
   steps:
     ...
@@ -27,18 +26,15 @@ spec:
 
 First, you will create a simple Tekton task with one step: running all the
 tests in `app/`. Naturally, the task requires that Tekton clones the source
-<<<<<<< HEAD
-<<<<<<< HEAD
 code from GitHub, which you can specify in the field `spec.resources.inputs`:
 
 1. Open `website/tutorials/katacoda/getting-started/src/tekton-katacoda/tasks/buildTemplate.yaml`.
 2. Edit the file; add a new resource to `spec.resources.inputs`:
-code from GitHub, which you can specify in the field `spec.inputs.resources`:
 
     ```yaml
     spec:
-      inputs:
-        resources:
+      resources:
+        inputs:
         - name: git
           type: git
     ```
@@ -51,7 +47,7 @@ code from GitHub, which you can specify in the field `spec.inputs.resources`:
 With the input resource ready, you may now specify the step.
 **Each step in Tekton uses a tool image to run some commands**; as an example,
 if you are a Go developer, you can use the [Go](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/go)
-tool image to build a Go program, or run tests in a Go project. 
+tool image to build a Go program, or run tests in a Go project.
 
 **Note**: [Tekton offers a number of pre-configured tasks you can use](https://github.com/tektoncd/catalog).
 You can also find many available images on container registries such as
@@ -139,7 +135,7 @@ the container you just built in the cluster.
       image: lachlanevenson/k8s-kubectl
       args:
       - expose
-      - deploy
+      - pod
       - myapp
       - --port=80
       - --target-port=8080
@@ -152,7 +148,7 @@ the container you just built in the cluster.
 
 See `website/tutorials/katacoda/getting-started/src/tekton-katacoda/tasks/deploy.yaml`
 for a complete specification of this task. To apply this task, run
-the commend below:
+the command below:
 
 `cd ~/website/tutorials/katacoda/getting-started/src/tekton-katacoda/ && kubectl apply -f tasks/deploy.yaml`{{execute}}
 
@@ -162,4 +158,4 @@ So far you have been using hard-coded values in your tasks. Tekton also
 supports variables in its specification, which allows developers
 to switch configurations easily at runtime. You can specify
 them in `spec.params` and use them in the steps with the
-`$(YOUR-VAR-NAME)` syntax. For examples, see `build.yaml` and `deploy.yaml`.
+`$(params.YOUR-VAR-NAME)` syntax. For examples, see `build.yaml` and `deploy.yaml`.

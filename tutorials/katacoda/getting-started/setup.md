@@ -1,7 +1,7 @@
 ## Before you begin
 
-Start an experimental Kubernetes cluster in Katacoda with command
-`launch.sh`{{execute}}.
+Your Kubernetes cluster is starting and may take a few minutes to be available.
+You will see 'Kubernetes started' in the terminal when it is ready.
 
 Run `kubectl cluster-info`{{execute}} in the terminal to check its status.
 You should see the following outputs:
@@ -34,8 +34,8 @@ To clone this repository, run the following command:
 
 `git clone https://github.com/tektoncd/website`{{execute}}
 
-Open the directory `website/tutorials/katacoda/getting-started/src` with the file explorer.
-The directory consists of three subdirectories and one file: 
+Open the directory `website/tutorials/katacoda/getting-started/src`.
+The directory consists of three subdirectories and one file:
 
 * `app/`: a simple Python Flask web application.
 * `tekton-katacoda/`: Tekton resource specifications you will use in this scenario.
@@ -43,7 +43,7 @@ The directory consists of three subdirectories and one file:
 
 ## Almost done
 
-Tekton is now running in your Katacode experimental cluster. To help the
+Tekton is now running in your Katacoda experimental cluster. To help the
 installation run smoothly in this special environment, a few extra steps
 are required:
 

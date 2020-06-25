@@ -11,15 +11,15 @@ spec:
   - name: dockerfilePath
     type: string
     description: The path to the dockerfile
-    default: /workspace/git/getting-started/src/Dockerfile
+    default: /workspace/git/tutorials/katacoda/getting-started/src/Dockerfile
   - name: srcPath
     type: string
     description: The path to the source code
-    default: /workspace/git/getting-started/src/app
+    default: /workspace/git/tutorials/katacoda/getting-started/src/app
   - name: contextPath
     type: string
     description: Docker build context
-    default: /workspace/git/getting-started/src/
+    default: /workspace/git/tutorials/katacoda/getting-started/src/
   - name: imageName
     type: string
     description: The name of built image

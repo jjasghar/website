@@ -7,11 +7,13 @@
     "steps": [
       {
         "title": "Core concepts",
-        "text": "concepts.md"
+        "text": "concepts.md",
+        "background": "env.sh"
       },
       {
         "title": "Setup",
-        "text": "setup.md"
+        "text": "setup.md",
+        "foreground": "init.sh"
       },
       {
         "title": "Specifying Tekton tasks",
