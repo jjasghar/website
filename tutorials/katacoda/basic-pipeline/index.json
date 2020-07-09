@@ -8,7 +8,7 @@
       {
         "title": "Create a basic Task",
         "text": "step1.md",
-        "code": "init.sh"
+        "foreground": "init.sh"
       },
       {
         "title": "Create a second basic Task",
@@ -35,10 +35,9 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-iframe"
+    "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "kubernetes",
 		"imageid": "kubernetes-cluster-running:1.18",
     "port": "80"
   }

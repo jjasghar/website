@@ -13,8 +13,6 @@ spec:
   steps:
     - name: hello
       image: ubuntu
-      command:
-        - echo
       script: |
         set -e
         echo "Hello World!"
@@ -72,5 +70,7 @@ tkn taskrun logs --last -f
 It may take a few moments before your Task completes. When it executes, it should show the following output:
 
 ```console
+[hello] + set -e
+[hello] + echo Hello World!
 [hello] Hello World!
 ```

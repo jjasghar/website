@@ -1,7 +1,7 @@
 The example Python app provided with the scenario is actually a client
 utility that connects to a remote service and retrieves information. For
 security reasons, before talking with the server it must use a credential
-to authenticate itself. 
+to authenticate itself.
 
 One may put the credential in the tests, however, it is obviously not very
 secure; in reality, most organizations mount credentials (as environment
@@ -21,12 +21,12 @@ First, create a secret. An example is available at
 apiVersion: v1
 kind: Secret
 metadata:
-    # The name of the secret
-    name: example-secret
+  # The name of the secret
+  name: example-secret
 type: Opaque
 data:
-    # The actual secret in the form of a key-value pair
-    apiKey: example-api-key
+  # The actual secret in the form of a key-value pair
+  apiKey: example-api-key
 ```
 
 To apply this secret, run the command below:
@@ -59,7 +59,7 @@ specs:
 
 With this setup, Tekton will automatically create a file with the name `apiKey`
 in the path `/etc/credential`. The file includes the value of the secret
-key-value pair, `example-api-key`. The tests have been configured to read 
+key-value pair, `example-api-key`. The tests have been configured to read
 the file at the specified path and load a credential from it.
 
 ## More about volumes

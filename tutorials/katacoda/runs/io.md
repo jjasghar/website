@@ -9,18 +9,18 @@ output, its pipelineRun should look like this:
 
 ```yaml
 spec:
-    pipelineRef: build-test
-    resources:
-    - name: my-repo
-      resourceSpec:
-        type: git
-        params:
-          ...
-    - name: my-image
-      resourceSpec:
-        type: image
-        params:
-          ...
+  pipelineRef: build-test
+  resources:
+  - name: my-repo
+    resourceSpec:
+      type: git
+      params:
+        ...
+  - name: my-image
+    resourceSpec:
+      type: image
+      params:
+        ...
 ```
 
 Note that the example above declares resources directly in the pipelineRun.
@@ -42,12 +42,12 @@ and use its name, `some-repo` as a reference in the pipelineRun:
 
 ```yaml
 spec:
-    pipelineRef: build-test
-    resources:
-    - name: my-repo
-      resourceRef:
-        name: some-repo
-    ...
+  pipelineRef: build-test
+  resources:
+  - name: my-repo
+    resourceRef:
+      name: some-repo
+  ...
 ```
 
 In this scenario, you will clone the source code from the GitHub repository
@@ -84,12 +84,12 @@ edit the `spec.inputs` section:
 
 ```yaml
 spec:
-    ...
-    resources:
-      inputs:
-      - name: git
-        resourceRef:
-          name: example-git
+  ...
+  resources:
+    inputs:
+    - name: git
+      resourceRef:
+        name: example-git
 ```
 
 Similarly, open `website/tutorials/katacoda/runs/src/tekton-katacoda/pipelines/pipelineRunTemplate.yaml`

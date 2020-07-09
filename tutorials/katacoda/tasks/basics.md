@@ -33,18 +33,18 @@ spec:
     # Uses builder image golang from DockerHub (https://hub.docker.com/_/golang)
     # to compile an app coded with Go 1.12.
     image: golang:1.12
-		script: |
-		  #!/bin/bash
-			go build example-app
+    script: |
+      #!/bin/bash
+      go build example-app
   ...
 ```
 
 Additionally, `spec` may include the the following fields:
 
-* `resources`: The input resources (e.g. source code from GitHub), 
+* `resources`: The input resources (e.g. source code from GitHub),
 and the output resources (e.g. a container image) this task creates.
 * `params`: The input parameters the task uses.
-* `volumes`: One or more [Kuberentes Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
+* `volumes`: One or more [Kubernetes Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
 available to the task. You may mount them in one or more of the steps.
 * `sidecars`: One or more sidecar containers that run alongside the steps.
 

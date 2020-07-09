@@ -27,10 +27,10 @@ associated with a pipeline named `build-test-deploy`:
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-    name: build-test-deploy-run
+  name: build-test-deploy-run
 spec:
-    pipelineRef:
-        name: build-test-deploy
+  pipelineRef:
+    name: build-test-deploy
 ```
 
 Additionally, `spec` may include the the following fields:
@@ -65,10 +65,10 @@ associated with a task named `build`:
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
-    name: build-run
+  name: build-run
 spec:
-    taskRef:
-        name: build
+  taskRef:
+    name: build
 ```
 
 Additionally, `spec` may include the the following fields:
@@ -107,12 +107,12 @@ spec:
   steps:
   - name: pytest
     image: python
-    script : |
-		  #!/bin/bash
-      cd /workspace/git/runs/src/app 
-		  pip install -r requirements.txt 
-		  pip install -r dev_requirements.txt 
-		  pytest .
+    script: |
+      #!/bin/bash
+      cd /workspace/git/tutorials/katacoda/runs/src/app
+      pip install -r requirements.txt
+      pip install -r dev_requirements.txt
+      pytest .
 ```
 
 And the pipeline simply wraps the task:
@@ -147,8 +147,8 @@ Edit the `spec.taskRef` section:
 
 ```yaml
 spec:
-    taskRef:
-        name: example-task
+  taskRef:
+    name: example-task
 ```
 
 To create a pipelineRun for the pipeline, open
@@ -157,6 +157,6 @@ Edit the `spec.pipelineRef` section:
 
 ```yaml
 spec:
-    pipelineRef:
-        name: example-pipeline
+  pipelineRef:
+    name: example-pipeline
 ```

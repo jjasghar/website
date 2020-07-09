@@ -27,12 +27,12 @@ specs:
     # The builder image to use
     image: python
     # The command to run with the builder image
-		script: |
-  		#!/bin/bash
-      git clone https://github.com/tektoncd/website.git 
-			cd ./website/tutorials/katacoda/tasks/src/server 
-			pip install -r requirements.txt 
-			python main.py
+    script: |
+      #!/bin/bash
+      git clone https://github.com/tektoncd/website.git
+      cd ./website/tutorials/katacoda/tasks/src/server
+      pip install -r requirements.txt
+      python main.py
 ```
 
 With this setup, Tekton (Kubernetes) will run the step in the task and the

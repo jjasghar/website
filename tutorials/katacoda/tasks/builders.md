@@ -8,24 +8,23 @@ To add this as a step, open `tutorials/katacoda/tasks/src/tekton-katacoda/tasks/
 and edit the field `specs.steps`:
 
 ```yaml
-specs:
-    inputs:
-    ...
-    steps:
-      # The name of the step
-    - name: pytest
-      # The builder image to use
-      # Here you will use the official Python image from DockerHub (https://hub.docker.com/_/python)
-      # which includes the pytest framework
-      image: python
-      # The command to run with the builder image
-      # Here you will run the bash shell to start the Python interpreter
-			script: |
-			  #!/bin/bash
-        cd /workspace/git/tasks/src/client 
-				pip install -r requirements.txt 
-				pip install -r dev_requirements.txt 
-				pytest .
+spec:
+  ...
+  steps:
+    # The name of the step
+  - name: pytest
+    # The builder image to use
+    # Here you will use the official Python image from DockerHub (https://hub.docker.com/_/python)
+    # which includes the pytest framework
+    image: python
+    # The command to run with the builder image
+    # Here you will run the bash shell to start the Python interpreter
+    script: |
+      #!/bin/bash
+      cd /workspace/git/tutorials/katacoda/tasks/src/client
+      pip install -r requirements.txt
+      pip install -r dev_requirements.txt
+      pytest .
     ...
 ```
 

@@ -64,13 +64,14 @@ steps:
 # The name of the step
 - name: pytest
   image: python
-  command:
-  - /bin/bash
-  - -c
-  args:
-  # Changes to the app/ directory, installs required dependencies, and
-  # run all the tests with pytest
-  - cd /workspace/git/getting-started/src/app && pip3 install -r requirements.txt && pip3 install -r dev_requirements.txt && pytest .
+  script: |
+    #!/bin/bash
+    # Changes to the app/ directory, installs required dependencies, and
+    # run all the tests with pytest
+    cd /workspace/git/tutorials/katacoda/getting-started/src/app
+    pip3 install -r requirements.txt
+    pip3 install -r dev_requirements.txt
+    pytest .
 ```
 
 ### Add more steps
@@ -87,15 +88,9 @@ steps:
   ...
 - name: docker
   image: docker
-  command:
-  - docker
-  args:
-  - build
-  - -f
-  - /workspace/git/getting-started/src/Dockerfile
-  - -t
-  - app
-  - /workspace/git/getting-started/src
+  script: |
+    #!/bin/bash
+    docker build -f /workspace/git/tutorials/katacoda/getting-started/src/Dockerfile -t app /workspace/git/tutorials/katacoda/getting-started/src
 ```
 
 This step invokes Docker to build the image and gives it the name `app`.
